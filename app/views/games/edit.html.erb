@@ -1,0 +1,11 @@
+<h1>Editing Game</h1>
+
+<%= render 'form', game: @game %>
+
+
+<div class="btn-group-vertical" role="group" aria-label="...">
+  <ul class="pager">
+    <li><%= link_to 'Show', @game %></li>
+    <li><%= link_to 'Back', games_path %></li>
+  </ul>
+</div>

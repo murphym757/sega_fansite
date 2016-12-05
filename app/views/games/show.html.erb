@@ -1,0 +1,72 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @game.image.url(:medium) %>
+        <div class="star-rating" data-score= <%= @avg_review %> > </div>
+        <em><%= "#{@review.length} reviews" %></em>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Title:</strong></td>
+                <td><%= @game.title %></td>
+              </tr>
+              <tr>
+                <td><strong>Developer:</strong></td>
+                <td><%= @game.developer %></td>
+              </tr>
+              <tr>
+                <td><strong>Genre:</strong></td>
+                <td><%= @game.genre %></td>
+              </tr>
+              <tr>
+                <td><strong>Release date:</strong></td>
+                <td><%= @game.release_date %></td>
+              </tr>
+              <tr>
+                <td><strong>Rating:</strong></td>
+                <td><%= @game.rating %></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class".col-md-7 col-md-offset-1">
+        <h1 class="review_title">Synopsis of <%= @game.title %>:</h1>
+        <p><%= @game.description %></p>
+
+        <% if @review.blank? %>
+          <h3>It looks like no one's reviewed this game yet. Would you like to give the first review?</h3>
+            <%= link_to "Write a Review", new_game_review_path(@game), class: "btn btn-primary" %>
+        <% else %>
+          <% @review.each do |review| %>
+          <div class="reviews">
+             <div class="star-rating" data-score= <%= review.rating %> > </div>
+            <p><%= review.comment %></p>
+          </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+$('.star-rating').raty({
+  path: '/assets/',
+  readOnly: true,
+  score: function() {
+        return $(this).attr('data-score');
+  }
+});
+</script>
+
+  <%= render 'games/carousel' %>
+
+<nav aria-label="...">
+  <ul class="pager">
+    <li><%= link_to 'Edit', edit_game_path(@game) %></li>
+    <li><%= link_to 'Back', games_path %></li>
+  </ul>
+</nav>

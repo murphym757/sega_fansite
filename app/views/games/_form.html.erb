@@ -1,0 +1,92 @@
+<%= form_for @game, html: { multipart: true } do |f| %>
+  <% if game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :title %></br>
+  </div>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :developer %></br>
+  </div>
+    <%= f.text_field :developer %>
+  </div>
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :genre %></br>
+  </div>
+    <%= f.text_field :genre %>
+  </div>
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :description %></br>
+  </div>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :release_date %></br>
+  </div>
+    <%= f.text_field :release_date %>
+  </div>
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :rating %></br>
+    </div>
+    <%= f.text_field :rating %>
+  </div>
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :gameplay_image %></br>
+    </div>
+    <%= f.text_field :link %>
+  </div>
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :gameplay_image_2 %></br>
+    </div>
+    <%= f.text_field :link_2 %>
+  </div>
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :gameplay_image_3 %></br>
+    </div>
+    <%= f.text_field :link_3 %>
+  </div>
+
+
+  <div class="field">
+    <div class="label_font">
+    <%= f.label :cover_art %></br>
+    </div>
+    <%= f.file_field :image %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>

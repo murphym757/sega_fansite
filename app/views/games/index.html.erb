@@ -1,0 +1,41 @@
+  <div class="jumbotron">
+    <% if !user_signed_in? %>
+    <div class="inner cover">
+      <h1 class="cover-heading">Welcome to Sega Paradise</h1>
+      <p>This is a place of digital nastalgia. If you've ever played the Sega Genesis (and loved it), you will absolutely love
+      this website. Please feel free to create an account and add as many games as you want to the colection. </p>
+      <p><%= link_to "Sign Up To Add A Game", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+    </div>
+
+    <% else %>
+    <div class="inner cover">
+      <h1 class="cover-heading">Welcome Back</h1>
+        <p></p>
+        <p><%= link_to "View Games", search_games_path, class: "btn btn-primary btn-lg" %></p>
+      </div>
+    <% end %>
+  </div>
+
+
+      <div class="mastfoot">
+        <div class="inner">
+          <p>This project was created by <a href="https://github.com/murphym757/sega_fansite">Maurice Murphy</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
