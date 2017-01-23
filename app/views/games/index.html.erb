@@ -1,33 +1,23 @@
-  <div class="jumbotron">
-    <% if !user_signed_in? %>
-    <div class="inner cover">
-      <h1 class="cover-heading">Welcome to Sega Paradise</h1>
-      <p>This is a place of digital nastalgia. If you've ever played the Sega Genesis (and loved it), you will absolutely love
-      this website. Please feel free to create an account and add as many games as you want to the colection. </p>
-      <p><%= link_to "Sign Up To Add A Game", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-    </div>
-
-    <% else %>
-    <div class="inner cover">
-      <h1 class="cover-heading">Welcome Back</h1>
-        <p></p>
-        <p><%= link_to "View Games", search_games_path, class: "btn btn-primary btn-lg" %></p>
-      </div>
-    <% end %>
-  </div>
-
-
-      <div class="mastfoot">
-        <div class="inner">
-          <p>This project was created by <a href="https://github.com/murphym757/sega_fansite">Maurice Murphy</a>.</p>
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="sega">Sega</h1>
+                    <h1 class="paradise">Paradise</h1>
+                </div>
+            </div>
         </div>
-      </div>
-
     </div>
-
+<div class="row">
+  <% @games.each do |game| %>
+  <div class="col-sm6 col-md-3">
+    <div class="thumbnail">
+      <%= link_to (image_tag game.image.url(:medium), class: 'image'), game %>
+    </div>
   </div>
-
-</body>
+  <% end %>
+</div>
 
 
 
