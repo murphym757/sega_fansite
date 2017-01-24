@@ -18,6 +18,16 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ @font-face {
+  font-family: 'Streamster';
+  src: font-url('Streamster.ttf');
+  src: font-url('Streamster.ttf?iefix') format('truetype');
+
+  font-family: 'sega';
+  src: font-url('sega.ttf');
+  src: font-url('sega.ttf?iefix') format('truetype');
+ }
+
 body {
 
   display: table;
@@ -31,13 +41,21 @@ body {
   background-size: cover;
 }
 
+
 .sega {
+  font-family: 'sega',sans-serif;
   color: #2E6AB0;
   padding-top: 200px;
+  font-size: 80px;
+  text-shadow: 10px 10px 10px 20px #000;
 }
 
 .paradise{
   color: #EE9FBF;
+  font-family: 'Streamster',sans-serif;
+  font-size: 100px;
+  text-shadow: 10px 10px 10px #000;
+
 }
 
 
