@@ -18,12 +18,6 @@ class GamesController < ApplicationController
 
   def show
     @review = Review.where(game_id: @game.id).order("created_at DESC")
-
-    if @review.blank?
-      @avg_review = 0
-    else
-      @avg_review = @review.average(:rating).round(2)
-    end
   end
 
 
@@ -41,7 +35,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }
