@@ -44,7 +44,7 @@
           <% @review.each do |review| %>
           <div class="reviews">
              <div class="star-rating" data-score= <%= review.rating %> > </div>
-            <p><%= review.comment %></p>
+            <p><i><%= review.comment %></i></p>
           </div>
           <% end %>
         <% end %>
@@ -52,7 +52,15 @@
   </div>
 </div>
 
-
+<script>
+$('.star-rating').raty({
+  path: '/assets/',
+  readOnly: true,
+  score: function() {
+        return $(this).attr('data-score');
+  }
+});
+</script>
 
 
   <%= render 'games/carousel' %>
