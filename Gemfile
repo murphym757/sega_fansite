@@ -12,6 +12,7 @@ gem 'devise', '~> 4.2'
 gem 'paperclip', '~> 5.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'searchkick', '~> 1.4'
+gem 'aws-sdk', '~> 2.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
