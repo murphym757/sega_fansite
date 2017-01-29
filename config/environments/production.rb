@@ -71,7 +71,6 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-
   # config/environments/production.rb
   config.paperclip_defaults = {
     storage: :s3,
@@ -82,7 +81,6 @@ Rails.application.configure do
       s3_region: ENV.fetch('Global'),
     }
   }
-
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
