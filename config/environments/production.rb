@@ -71,14 +71,14 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  # config/environments/production.rb
+  # Sets Paperclip to upload images to Amazon S3
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
-      bucket: ENV.fetch('segaparadisecontent'),
-      access_key_id: ENV.fetch('AKIAJIQROYP7QUJNNG7A'),
-      secret_access_key: ENV.fetch('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'),
-      s3_region: ENV.fetch('Global'),
+      bucket: ENV.fetch('S3_BUCKET_NAME'),
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      s3_region: ENV.fetch('AWS_REGION'),
     }
   }
 
