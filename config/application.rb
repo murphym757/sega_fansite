@@ -12,8 +12,6 @@ module SegaFansite
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
-
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.initialize_on_precompile = false
