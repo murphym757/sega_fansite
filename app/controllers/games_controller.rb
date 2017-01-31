@@ -2,13 +2,6 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  def search
-    if params[:search].present?
-      @games = Game.search(params[:search])
-    else
-      @games = Game.all
-    end
-  end
 
 
   def index
