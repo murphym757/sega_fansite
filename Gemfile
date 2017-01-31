@@ -13,6 +13,8 @@ gem 'paperclip', '~> 5.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'searchkick', '~> 1.4'
 gem 'aws-sdk', '~> 2.3'
+gem 'elasticsearch', '>= 1.0.15'
+gem 'faraday_middleware-aws-signers-v4'
 
 group :development, :test do
   gem 'byebug', platform: :mri
