@@ -2,7 +2,7 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag @game.image(:medium) %>
+        <%= image_tag @game.image.url(:medium) %>
         <div class="star-rating" data-score= <%= @avg_review %> > </div>
         <em><%= "#{@review.length} reviews" %></em>
         <div class="table-responsive">
