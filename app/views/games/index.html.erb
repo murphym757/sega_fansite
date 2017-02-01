@@ -13,7 +13,7 @@
   <% @games.each do |game| %>
   <div class="col-sm6 col-md-3">
     <div class="thumbnail">
-      <%= link_to (@game.image(:medium), class: 'image'), game %>
+      <%= link_to (image_tag @game.image(:medium), class: 'image'), game %>
     </div>
   </div>
   <% end %>
