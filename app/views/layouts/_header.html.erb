@@ -27,3 +27,37 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<!-- Navigation -->
+  <div class="container">
+      <div class="navbar-header">
+
+          <a class="navbar-brand page-scroll" href="#page-top">
+              <i class="fa fa-home"></i> Sega <span class="light">Paradise</span>
+          </a>
+
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+              Menu <i class="fa fa-bars"></i>
+          </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+              <li class="hidden">
+                  <a href="#page-top"></a>
+              </li>
+              <% if user_signed_in? %>
+              <li><%= link_to "New Game", new_game_path, class: "active" %></li>
+              <li><%= link_to "Account", edit_user_registration_path %></li>
+              <% else %>
+              <li><%= link_to "Sign Up", new_user_registration_path, class: "active" %></li>
+              <li><%= link_to "Sign In", new_user_session_path, class: "active" %></li>
+              <% end %>
+          </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+
+  </div>
+  <!-- /.container -->
