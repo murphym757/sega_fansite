@@ -164,6 +164,11 @@ body {
   height: 300px;
 }
 
+@media (max-width: 786px) {
+.carousel-gameplay {
+  font-size: 18px;
+  }
+}
 
 @media (min-width: 786px){
   .carousel,
