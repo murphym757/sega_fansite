@@ -40,7 +40,9 @@ body {
   -moz-background-size: cover;
   background-size: cover;
 }
-
+.navbar-brand {
+  font-family: 'sega',sans-serif;
+}
 
 .sega {
   font-family: 'sega',sans-serif;
@@ -65,6 +67,16 @@ body {
   font-family: 'sega',sans-serif;
   color: #fff;
 }
+
+.jumbotron-inverse{
+  padding-bottom: 50px;
+}
+
+
+.jumbo-info {
+  color: #fff;
+}
+
 
 /* Custom default button */
 .btn-default,
