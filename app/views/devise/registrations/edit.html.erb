@@ -4,7 +4,9 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <div class="label_font">
     <%= f.label :email %><br />
+  </div>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
@@ -13,21 +15,27 @@
   <% end %>
 
   <div class="field">
+    <div class="label_font">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  </div>
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em class="char-length"><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
   <div class="field">
+    <div class="label_font">
     <%= f.label :password_confirmation %><br />
+  </div>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
+    <div class="label_font">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  </div>
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
@@ -36,9 +44,11 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+
+<h2 class="page-title">Cancel my account</h2>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
 
 <div class="btn-group-vertical" role="group" aria-label="...">
   <ul class="pager">

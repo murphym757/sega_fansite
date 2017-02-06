@@ -59,9 +59,7 @@ body {
   text-shadow: 10px 10px 10px #000;
 }
 
-.field {
-  color: #EE9FBF;
-}
+.field {}
 
 .page-title {
   font-family: 'sega',sans-serif;
@@ -88,7 +86,8 @@ body {
   border: 1px solid #fff;
 }
 
-.label_font{
+.label_font,
+.char-length{
   color: #fff
 
 }
