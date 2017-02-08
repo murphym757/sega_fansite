@@ -33,21 +33,23 @@
           </table>
         </div>
       </div>
-      <div class".col-md-7 col-md-offset-1">
-        <h1 class="review_title">Synopsis of <i>"<%= @game.title %>"</i>:</h1>
-        <p><%= @game.description %></p>
+      <div class="review-section">
+        <div class"col-md-7 col-md-offset-1">
+          <h1 class="review_title">Synopsis of <i>"<%= @game.title %>"</i>:</h1>
+          <p><%= @game.description %></p>
 
-        <% if @review.blank? %>
-          <h3>It looks like no one's reviewed this game yet. Would you like to give the first review?</h3>
-            <%= link_to "Write a Review", new_game_review_path(@game), class: "btn btn-primary" %>
-        <% else %>
-          <% @review.each do |review| %>
-          <div class="reviews">
-             <div class="star-rating" data-score= <%= review.rating %> > </div>
-            <p><i><%= review.comment %></i></p>
-          </div>
+          <% if @review.blank? %>
+            <h3>It looks like no one's reviewed this game yet. Would you like to give the first review?</h3>
+              <%= link_to "Write a Review", new_game_review_path(@game), class: "btn btn-primary" %>
+          <% else %>
+            <% @review.each do |review| %>
+            <div class="reviews">
+               <div class="star-rating" data-score= <%= review.rating %> > </div>
+              <p><i><%= review.comment %></i></p>
+            </div>
+            <% end %>
           <% end %>
-        <% end %>
+      </div>
     </div>
   </div>
 </div>
