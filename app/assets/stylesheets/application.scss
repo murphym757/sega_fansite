@@ -59,7 +59,11 @@ body {
   text-shadow: 10px 10px 10px #000;
 }
 
-.field {}
+.game-title,
+.developer-title {
+  font-size:12px;
+}
+
 
 .page-title {
   font-family: 'sega',sans-serif;
@@ -180,6 +184,8 @@ body {
 .carousel-gameplay {
   font-size: 18px;
   }
+
+
 
   .sega {
     font-family: 'sega',sans-serif;
