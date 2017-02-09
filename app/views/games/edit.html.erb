@@ -1,6 +1,10 @@
 <h2 class="page-title">Editing Game</h2>
 
-<%= render 'form', game: @game %>
+<%= render 'form', game: @game %><br>
+
+<h2 class="page-title">Delete this game</h2>
+
+<p><%= button_to 'Delete', game_path(@game), data: { confirm: "Are you sure that want to delete this game?" }, method: :delete %></p>
 
 
 <div class="btn-group-vertical" role="group" aria-label="...">
