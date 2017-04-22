@@ -3,11 +3,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="sega">Sega</h1>
-                    <h1 class="paradise">Paradise</h1>
+                  <img class="logo-heading"><%= image_tag("Logo SP.svg", alt: "logo-img", height: 300, width: 300) %></img>
                 </div>
                 <% @games.each do |game| %>
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
                   <div class="thumbnail">
                     <%= link_to (image_tag game.image.url(:medium), class: 'image'), game %>
                   </div>
