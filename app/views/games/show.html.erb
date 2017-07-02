@@ -1,31 +1,41 @@
 <div class="panel panel-default">
-  <div class="panel-body">
+  <div class="panel-body animsition">
     <div class="row">
       <div class="col-md-4">
         <%= image_tag @game.image.url(:medium) %>
-        <div class="star-rating" data-score= <%= @avg_review %> > </div>
+        <div class="star-rating" data-score=<%= @avg_review %>></div>
         <em><%= "#{@review.length} reviews" %></em>
         <div class="table-responsive">
           <table class="table">
             <tbody>
               <tr>
-                <td><strong>Title:</strong></td>
+                <td>
+                  <strong>Title:</strong>
+                </td>
                 <td class="game-title"><%= @game.title %></td>
               </tr>
               <tr>
-                <td><strong>Developer:</strong></td>
+                <td>
+                  <strong>Developer:</strong>
+                </td>
                 <td class="developer-title"><%= @game.developer %></td>
               </tr>
               <tr>
-                <td><strong>Genre:</strong></td>
+                <td>
+                  <strong>Genre:</strong>
+                </td>
                 <td><%= @game.genre %></td>
               </tr>
               <tr>
-                <td><strong>Release date:</strong></td>
+                <td>
+                  <strong>Release date:</strong>
+                </td>
                 <td><%= @game.release_date %></td>
               </tr>
               <tr>
-                <td><strong>Rating:</strong></td>
+                <td>
+                  <strong>Rating:</strong>
+                </td>
                 <td><%= @game.rating %></td>
               </tr>
 
@@ -35,43 +45,45 @@
       </div>
       <div class="review-section">
         <div class"col-md-7 col-md-offset-1">
-          <h1 class="review_title">Synopsis of <i>"<%= @game.title %>"</i>:</h1>
+          <h1 class="review_title">Synopsis of
+            <i>"<%= @game.title %>"</i>:</h1>
           <p><%= @game.description %></p>
 
           <% if @review.blank? %>
-            <h3>It looks like no one's reviewed this game yet. Would you like to give the first review?</h3>
-              <%= link_to "Write a Review", new_game_review_path(@game), class: "btn btn-primary" %>
-          <% else %>
-            <% @review.each do |review| %>
-            <div class="reviews">
-               <div class="star-rating" data-score= <%= review.rating %> > </div>
-              <p><i><%= review.comment %></i></p>
-            </div>
-            <% end %>
+          <h3>It looks like no one's reviewed this game yet. Would you like to give the first review?</h3>
+          <%= link_to "Write a Review", new_game_review_path(@game), class: "btn btn-sp" %>
+        <% else %>
+          <% @review.each do |review| %>
+          <div class="reviews">
+            <div class="star-rating" data-score=<%= review.rating %>></div>
+            <p>
+              <i><%= review.comment %></i>
+            </p>
+          </div>
           <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
+    <div class="game-carousel">
+      <%= render 'games/carousel' %>
+    </div>
   </div>
-</div>
 
-
-<script>
-$('.star-rating').raty({
-  path: '<%= '/assets/' %>',
-  readOnly: true,
-  score: function() {
+  <script>
+    $('.star-rating').raty({
+      path: '<%= ' / assets / ' %>',
+      readOnly: true,
+      score: function () {
         return $(this).attr('data-score');
-  }
-});
-</script>
+      }
+    });
+  </script>
 
-<div class= "game-carousel">
-  <%= render 'games/carousel' %>
+  <nav aria-label="...">
+    <p class="show-button">
+      <%= link_to 'Edit', edit_game_path(@game), class: "btn btn-sp" %>
+      <%= link_to 'Back', games_path, class: "btn btn-sp", method: :get %>
+    </p>
+  </nav>
 </div>
-
-<nav aria-label="...">
-  <ul class="pager">
-    <li><%= link_to 'Edit', edit_game_path(@game) %></li>
-    <li><%= link_to 'Back', games_path %></li>
-  </ul>
-</nav>

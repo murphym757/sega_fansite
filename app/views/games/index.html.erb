@@ -1,41 +1,36 @@
 <header class="intro">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                  <img class="logo-heading"><%= image_tag("Logo SP.svg", alt: "logo-img", height: 300, width: 300) %></img>
-                </div>
-                <% @games.each do |game| %>
-                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                  <div class="thumbnail">
-                    <%= link_to (image_tag game.image.url(:medium), class: 'image'), game %>
-                  </div>
-                </div>
-                <% end %>
-            </div>
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <img class="logo-heading"><%= image_tag("Logo SP.svg", alt: "logo-img", height: 720, width: 720) %></img>
         </div>
+        <% @games.each do |game| %>
+        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+          <div class="thumbnail">
+            <%= link_to (image_tag game.image.url(:medium), class: 'image animsition'), game, method: :get %>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
+  </div>
+</header>
 
+<% if user_signed_in? %>
+<% else %>
+<div class="jumbotron-inverse">
+  <p class="jumbo-info">This is a place of digital nastalgia. If you've ever played the Sega Genesis (and loved it), you will absolutely love this website. Please feel free to create an account and add as many games as you want to the collection.</p>
+  <p class="jumbo-button">
+    <%= link_to "Sign Up To Add A Game", new_user_registration_path, class: "btn btn-sp btn-lg" %>
+  </p>
+</div>
+<% end %>
 
-    <% if user_signed_in? %>
-    <% else %>
-    <div class="jumbotron-inverse">
-      <p class="jumbo-info">This is a place of digital nastalgia. If you've ever played the Sega Genesis (and loved it), you will absolutely love
-      this website. Please feel free to create an account and add as many games as you want to the collection.</p>
-      <p class="jumbo-button">
-        <%= link_to "Sign Up To Add A Game", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-      </p>
-    </div>
-    <% end %>
-
-    <footer class="footer">
-       <div class="container">
-         <span class="text-muted"><a href="https://github.com/murphym757/sega_fansite"><%= image_tag("github.png", alt: "png-img", height: 100, width: 180) %></a>|
-           <a href="https://maurice-murphy-portfolio.herokuapp.com/"><%= image_tag("mmlogo2.png", alt: "png-img", height: 80, width: 160) %></a><br>Copyright &copy; 2017<br></span>
-       </div>
-     </footer>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="app/assets/javascripts/bootstrap.js"></script>
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">
+      <a href="https://github.com/murphym757/sega_fansite"><%= image_tag("github.png", alt: "png-img", height: 100, width: 180) %></a>
+      <a href="https://maurice-murphy-portfolio.herokuapp.com/"><%= image_tag("mmlogo2.png", alt: "png-img", height: 80, width: 160) %></a><br>Copyright &copy; 2017<br></span>
+  </div>
+</footer>

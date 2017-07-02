@@ -12,232 +12,491 @@
  *
  *= require_tree .
  *= require_self
+ *= require rails_bootstrap_forms
  */
-
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
- @import "bootstrap-sprockets";
- @import "bootstrap";
-
- @font-face {
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@font-face {
   font-family: 'Streamster';
   src: font-url('Streamster.ttf');
   src: font-url('Streamster.ttf?iefix') format('truetype');
-
   font-family: 'sega';
   src: font-url('sega.ttf');
   src: font-url('sega.ttf?iefix') format('truetype');
- }
-
+}
+/*Sega Paradise Color Scheme*/
+$black: #000000;
+$violetRed: #F14091;
+$white: #ffffff;
+$celestialBlue: #4687D6;
+$grey: #777b79;
+$lightGrey: #eaeaea;
+/*------------------------*/
 body {
-
   display: table;
   width: 100%;
   height: auto;
   text-align: center;
   background: image-url("logo.jpg") no-repeat top center scroll;
-  background-color: #000;
+  background-color: $black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-}
-.navbar-brand {
-  font-family: 'sega',sans-serif;
+  -o-background-size: cover;
 }
 
-.sega {
-  font-family: 'sega',sans-serif;
-  color: #2E6AB0;
-  padding-top: 200px;
-  font-size: 100px;
-  text-shadow: 10px 10px 10px 20px #000;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.paradise{
-  color: #EE9FBF;
-  font-family: 'sega',sans-serif;
-  font-size: 100px;
-  text-shadow: 10px 10px 10px #000;
+.developer-title,
+.game-title {
+  font-size: 10px;
 }
-
-.game-title,
-.developer-title {
-  font-size:10px;
-}
-
-
-.page-title {
-  font-family: 'sega',sans-serif;
-  color: #fff;
-}
-
-.jumbotron-inverse{
-  padding-bottom: 50px;
-}
-
 
 .jumbo-info {
-  color: #fff;
+  color: $white;
 }
 
-
-
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+.char-length,
+.label_font {
+  color: $white;
 }
-
-.label_font,
-.char-length{
-  color: #fff
-
-}
-
-.myCarousel {
-  padding-right: 25px;
-}
-
-
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 30px;
-}
-
-
 /*
  * Cover
  */
-
 .cover {
   padding: 300px 10px 20px 20px;
 }
+
 .cover .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
 }
-
-
-/*
- * Footer
- */
-
-.footer{
-  padding-top: 45px;
+/* Forms */
+/*form styling */
+.formpage {
+  display: table;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: $black;
 }
 
+.formpage2 {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  text-align: center;
+  color: $black;
+}
+
+.entirepanel {
+  padding-top: 75px;
+}
+
+.logo-heading-form {}
+
+.logo-heading-form2 {
+  padding-top: 200px;
+}
+
+.panel {
+  margin-bottom: 20px;
+  background-color: $white;
+  border: 0 none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel > .panel-heading {
+  background-image: none;
+  background-color: $celestialBlue;
+  color: $white;
+}
+
+.panel-body > .formfield {
+  background-image: none;
+  color: $white;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 /* Carousel base class */
 .carousel {
-  height: 300px;
+  height: 200px;
   margin-bottom: 10px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
 }
-
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 300px;
-  background-color: #777;
-
+  height: 200px;
+  background-color: $grey;
 }
+
 .carousel-inner > .item > img {
   position: absolute;
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 300px;
+  height: 200px;
+}
+@media (max-width: 786px) {}
+/* Bump up size of carousel content */
+.carousel-caption p {
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 1.4;
 }
 
-@media (max-width: 786px) {
-.carousel-gameplay {
-  font-size: 18px;
+.featurette-heading {
+  font-size: 50px;
+}
+@media (min-width: 786px) {
+  .featurette-heading {
+    margin-top: 120px;
   }
-
-
-
-  .sega {
-    font-family: 'sega',sans-serif;
-    color: #2E6AB0;
-    padding-top: 10px;
-    font-size: 40px;
-    text-shadow: 10px 10px 10px 20px #000;
-  }
-
-  .paradise{
-    color: #EE9FBF;
-    font-family: 'sega',sans-serif;
-    font-size: 40px;
-    text-shadow: 10px 10px 10px #000;
-  }
-
 }
 
-@media (min-width: 786px){
+.game_title {
+  margin: 0 0 20px;
+}
+
+.field {
+  margin: 10px 0 0;
+}
+
+.reviews {
+  padding: 15px 0;
+  border-bottom: 1px solid $lightGrey;
+
+  .star-ratings {
+    padding-bottom: 8px;
+  }
+}
+/* Custom Bootstrap Navbar */
+.navbar-brand {
+  font-family: sans-serif;
+}
+
+.navbar-default {
+  background-color: $black;
+  border-color: $black;
+}
+
+.navbar-default .navbar-brand {
+  color: $celestialBlue;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: $violetRed;
+}
+
+.navbar-default .navbar-text {
+  color: $celestialBlue;
+}
+
+.navbar-default .navbar-nav .navbar-brand > li > a {
+  color: $celestialBlue;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $violetRed;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  color: $celestialBlue;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: $violetRed;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: $celestialBlue;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover {
+  color: $violetRed;
+  background-color: $violetRed;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: $violetRed;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover {
+  color: $violetRed;
+  background-color: $violetRed;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: $violetRed;
+  background-color: $violetRed;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  color: $violetRed;
+  background-color: $violetRed;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: $violetRed;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: $violetRed;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: $celestialBlue;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: $celestialBlue;
+}
+
+.navbar-default .navbar-link {
+  color: $celestialBlue;
+}
+
+.navbar-default .navbar-link:hover {
+  color: $violetRed;
+}
+/*-------------------------*/
+/* Custom Bootstrap Button */
+.btn-sp {
+  color: $white;
+  background-color: $celestialBlue;
+  border-color: $black;
+}
+
+.btn-sp.active,
+.btn-sp:active,
+.btn-sp:focus,
+.btn-sp:hover,
+.open .dropdown-toggle.btn-sp {
+  color: $white;
+  background-color: $violetRed;
+  border-color: $black;
+}
+
+.btn-sp.active,
+.btn-sp:active,
+.open .dropdown-toggle.btn-sp {
+  background-image: none;
+}
+
+.btn-sp.disabled,
+.btn-sp.disabled.active,
+.btn-sp.disabled:active,
+.btn-sp.disabled:focus,
+.btn-sp.disabled:hover,
+.btn-sp[disabled],
+.btn-sp[disabled].active,
+.btn-sp[disabled]:active,
+.btn-sp[disabled]:focus,
+.btn-sp[disabled]:hover,
+fieldset[disabled] .btn-sp,
+fieldset[disabled] .btn-sp.active,
+fieldset[disabled] .btn-sp:active,
+fieldset[disabled] .btn-sp:focus,
+fieldset[disabled] .btn-sp:hover {
+  background-color: $celestialBlue;
+  border-color: $black;
+}
+
+.btn-sp .badge {
+  color: $celestialBlue;
+  background-color: $white;
+}
+/*-------------------------*/
+/*-------------------------------------------------*/
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+/* Small devices (phones) */
+@media (min-width: 300px) and (max-width: 667px) and (orientation: portrait) {
+  .carousel-gameplay {
+    font-size: 18px;
+    text-shadow: 0 0 3px $black;
+  }
+}
+@media (min-width: 300px) and (max-width: 667px) and (orientation: landscape) {
+  .carousel-gameplay {
+    font-size: 18px;
+    text-shadow: 0 0 3px $black;
+  }
+
+  .carousel,
+  .carousel .item,
+  .carousel-inner > .item > img {
+    height: 200px;
+  }
+}
+/* Small devices (larger phones) */
+@media (min-width: 668px) and (max-width: 767px) and (orientation: portrait) {
+  .carousel-gameplay {
+    font-size: 18px;
+    text-shadow: 0 0 3px $black;
+  }
+}
+@media (min-width: 668px) and (max-width: 767px) and (orientation: landscape) {
+  .carousel-gameplay {
+    font-size: 18px;
+    text-shadow: 0 0 3px $black;
+  }
+
+  .carousel,
+  .carousel .item,
+  .carousel-inner > .item > img {
+    height: 300px;
+  }
+}
+/* ---------------------------------------------------- */
+/* Medium devices (tablets, 768px and up/1439px and down) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Navbar positioning foo */
+  .carousel,
+  .carousel .item,
+  .carousel-inner > .item > img {
+    height: 400px;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Navbar positioning foo */
+  .signInForm {
+    padding-top: 300px;
+  }
+
+  .userEditForm {
+    padding-top: 300px;
+  }
+
+  .signUpForm {
+    padding-top: 300px;
+  }
+
+  .passwordsEditForm {
+    padding-top: 300px;
+  }
+
+  .passwordsNewForm {
+    padding-top: 300px;
+  }
+
+  .carousel,
+  .carousel .item,
+  .carousel-inner > .item > img {
+    height: 400px;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+}
+/* ---------------------------------------------------- */
+/* Large devices (Laptops (and large resolution tablets), 1025px to 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) and (orientation: portrait) {
   .carousel,
   .carousel .item,
   .carousel-inner > .item > img {
     height: 500px;
   }
-}
 
-
-
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
-
-
-@media (min-width: 786px) {
-  .featurette-heading {
-    margin-top: 120px;
-  }
-
-}
-
-.game_title {
-  margin:0 0 20px 0;
-}
-.field {
-  margin:10px 0 0 0;
-}
-
-.reviews {
-  padding:15px 0;
-  border-bottom: 1px solid #EAEAEA;
-  .star-ratings {
-    padding-bottom: 8px;
+  .container {
+    width: 100%;
+    height: auto;
+    text-align: center;
   }
 }
+@media (min-width: 1025px) and (max-width: 1439px) and (orientation: landscape) {
+  /* Navbar positioning foo */
+  .carousel,
+  .carousel .item,
+  .carousel-inner > .item > img {
+    height: 600px;
+  }
+
+  .signInForm {
+    padding-top: 150px;
+  }
+
+  .userEditForm {
+    padding-top: 150px;
+  }
+
+  .signUpForm {
+    padding-top: 150px;
+  }
+
+  .passwordsEditForm {
+    padding-top: 150px;
+  }
+
+  .passwordsNewForm {
+    padding-top: 150px;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+}
+/* ---------------------------------------------------- */
+/* Large devices (Computers, 1440px and up) */
+@media (min-width: 1440px) and (orientation: landscape) {
+  .carousel,
+  .carousel .item,
+  .carousel-inner > .item > img {
+    height: 500px;
+  }
+
+  .signInForm {
+    padding-top: 200px;
+  }
+
+  .userEditForm {
+    padding-top: 200px;
+  }
+
+  .signUpForm {
+    padding-top: 200px;
+  }
+
+  .passwordsEditForm {
+    padding-top: 200px;
+  }
+
+  .passwordsNewForm {
+    padding-top: 200px;
+  }
+
+}
+/* ---------------------------------------------------- */

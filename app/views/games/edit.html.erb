@@ -1,15 +1,14 @@
-<h2 class="page-title">Editing Game</h2>
-
-<%= render 'form', game: @game %><br>
-
-
-<h2 class="page-title">Delete game</h2>
-<p><%= button_to 'Delete Game', game_path(@game), data: { confirm: "Are you sure that want to delete this game?" }, method: :delete %></p>
-
-
-<div class="btn-group-vertical" role="group" aria-label="...">
-  <ul class="pager">
-    <li><%= link_to 'Show', @game %></li>
-    <li><%= link_to 'Back', games_path %></li>
-  </ul>
+<header class="formpage">
+  <div class="row">
+    <div class="panel-body">
+      <img class="logo-heading-form2">
+        <%= image_tag @game.image.url(:medium) %>
+      </img>
+    </header>
+    <div class="panel-body">
+      <%= render 'form', game: @game %>
+      <%= button_to "Delete Game", game_path(@game), data: { confirm: "Are you sure that you to delete this game?" }, method: :delete, class: "btn btn-sp" %>
+    </div>
+  </div>
 </div>
+</header>
