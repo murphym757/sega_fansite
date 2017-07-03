@@ -12,4 +12,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( ratyrate.js )
 Rails.application.config.assets.precompile += %w( animsition.min.js )
 Rails.application.config.assets.precompile += %w( main.js )
+Rails.application.config.assets.precompile += %w( jquery.raty.js )
 Rails.application.config.assets.precompile += %w( bootstrap.js )

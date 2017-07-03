@@ -745,9 +745,9 @@
     scoreName    : 'score',
     single       : false,
     space        : true,
-    starHalf     : 'star-half.png',
-    starOff      : 'star-off.png',
-    starOn       : 'star-on.png',
+    starHalf    : 'fa fa-fw fa-star-half-o',                            // The name of the half star image.
+    starOff     : 'fa fa-fw fa-star-o',                                 // Name of the star image off.
+    starOn      : 'fa fa-fw fa-star',
     starType     : 'img',
     target       : undefined,
     targetFormat : '{score}',

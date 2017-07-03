@@ -1,35 +1,49 @@
-<%= form_for([@game, @review]) do |f| %>
-  <% if review.errors.any? %>
-    <div id="error_explanation">
-      <h2 class= "page-title"><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+<%= bootstrap_form_for ([@game, @review]), html: { multipart: true } do |f| %>
+<% if @game.errors.any? %>
+<div id="error_explanation">
+  <h2 class="page-title"><%= pluralize(track.errors.count, "error") %>
+    prohibited this track from being saved:</h2>
 
-      <ul>
-      <% review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-  <div id="star-rating"></div>
-  </div>
-
-  <div class="field">
-    <div class="label_font">
-    <%= f.label :comment %></br>
-    </div>
-    <%= f.text_area :comment %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <ul>
+    <% track.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+<header class="formpage">
+  <div class="row">
+    <div class="newGameForm">
+      <div class="panel panel-default">
+        <div class="panel-heading">Game</div>
+      </div>
+      <div class="panel-body">
+        <div class="field">
+        <div id="star-rating"></div>
+        </div>
+
+        <div class="formfield">
+          <%= f.text_area :comment, autofocus: true, placeholder: "How's the game"  %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Update Game", class: "btn btn-sp"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
+<p class="show-button">
+  <%= link_to 'Back', games_path, class: "btn btn-sp", method: :get %>
+</p>
 
 <script>
 $('#star-rating').raty({
-  path: '/assets/',
+  starOn: '<%= image_path('star-on.png') %>',
+  starOff: '<%= image_path('star-off.png') %>',
+  path: '',
 scoreName: 'review[rating]'
 });
 </script>
